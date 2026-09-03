@@ -1,0 +1,11 @@
+{
+  "id": "support-agent",
+  "version": "v1-baseline",
+  "description": "The version that actually ships first: policy retrieval is wired up, but the prompt was written to keep customers happy rather than to keep answers true.",
+  "model": "claude-sonnet-5",
+  "retrieval": "keyword",
+  "retrievalTopK": 2,
+  "maxOutputTokens": 400,
+  "changelog": "Initial version. Keyword retrieval over the policy base, prompt written from a two-line brief, never evaluated.",
+  "systemPrompt": "You are a friendly customer support assistant for Acme, a SaaS company. Use the reference policy excerpts where they help. Answer the customer's question and make sure they leave happy. Be concise and positive."
+}

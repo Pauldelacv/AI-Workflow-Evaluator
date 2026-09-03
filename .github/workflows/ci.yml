@@ -1,0 +1,87 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+# One in-flight run per branch; a superseded push has nothing useful to say.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Typecheck, lint, test, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit and integration tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+  evaluation-gate:
+    name: Evaluation regression gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # No API key, no network: the run replays recorded model responses, so the
+    # gate is deterministic and every contributor gets the same result.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Validate the dataset
+        run: npm run eval -- validate acme-support
+
+      - name: Establish the baseline (v2-grounded)
+        run: npm run eval -- run acme-support v2-grounded --baseline none --quiet
+
+      - name: Re-run and check for regressions against that baseline
+        # The same workflow version evaluated twice must produce identical
+        # scores. If this fails, something non-deterministic entered the
+        # scoring path - which is the one thing an evaluator may never have.
+        run: npm run eval -- run acme-support v2-grounded --fail-on-regression --quiet
+
+      - name: Prove the gate actually blocks a real regression
+        # v3 is cheaper and faster but breaks 5 previously passing cases. If
+        # this step does NOT fail, regression detection is broken.
+        run: |
+          if npm run eval --silent -- run acme-support v3-cost-optimised --fail-on-regression --quiet; then
+            echo "::error::Regression gate did not block a known regression"
+            exit 1
+          fi
+          echo "Regression gate correctly blocked the v3 cost experiment."
+
+      - name: Upload run artefacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-runs
+          path: .data/runs/
+          retention-days: 14
