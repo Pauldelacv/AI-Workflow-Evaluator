@@ -1,0 +1,17 @@
+services:
+  evaluator:
+    build: .
+    image: ai-workflow-evaluator
+    ports:
+      - '3000:3000'
+    environment:
+      # Optional. Without it the app runs on recorded fixtures, which is the
+      # default and needs no credentials.
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    volumes:
+      # Runs survive container restarts.
+      - evaluator-data:/data
+    restart: unless-stopped
+
+volumes:
+  evaluator-data:

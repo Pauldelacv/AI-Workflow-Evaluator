@@ -1,0 +1,122 @@
+{
+  "support-agent@v2-grounded::case-001": {
+    "text": "Reset your password at /forgot-password and you will get a reset link by email. The link expires after 60 minutes. Support cannot set a password on your behalf.",
+    "latencyMs": 1467
+  },
+  "support-agent@v2-grounded::case-002": {
+    "text": "Yes, you can cancel at any time from Billing then Plan, and access continues until the end of the period you have already paid for. Because 45 days is outside the 30 days refund window, no refund is issued.",
+    "latencyMs": 1398
+  },
+  "support-agent@v2-grounded::case-003": {
+    "text": "No. Refunds are only within 30 days of the initial purchase, so a purchase made 60 days ago is not refundable. If you think the charge itself is an error, contact billing@acme.example.",
+    "latencyMs": 1438
+  },
+  "support-agent@v2-grounded::case-004": {
+    "text": "The trial lasts 14 days and includes every Growth feature. No credit card is required to start. There is one trial per organisation.",
+    "latencyMs": 1520
+  },
+  "support-agent@v2-grounded::case-005": {
+    "text": "Growth is 49 EUR per month and includes 10 seats. Additional seats beyond that are 5 EUR per seat per month.",
+    "latencyMs": 1335
+  },
+  "support-agent@v2-grounded::case-006": {
+    "text": "Acme does not offer phone support on any plan. Support is by email and in-app chat, Monday to Friday 09:00 to 18:00 CET, and Scale customers get 24/7 support.",
+    "latencyMs": 1664
+  },
+  "support-agent@v2-grounded::case-007": {
+    "text": "Starter has no contractual SLA. The 99.9% monthly uptime SLA applies to the Scale plan only.",
+    "latencyMs": 1717
+  },
+  "support-agent@v2-grounded::case-008": {
+    "text": "That is not possible. All customer data is stored in the EU, in Frankfurt (eu-central-1), and US data residency is not available on any plan.",
+    "latencyMs": 1600
+  },
+  "support-agent@v2-grounded::case-009": {
+    "text": "Growth includes 10 seats for 49 EUR per month. The 4 extra seats cost 5 EUR each per month, so the total is 69 EUR per month.",
+    "latencyMs": 1324
+  },
+  "support-agent@v2-grounded::case-010": {
+    "text": "Export your data yourself from Settings then Data, available as CSV or JSON. Exports contain all records in your workspace and are not rate limited.",
+    "latencyMs": 1729
+  },
+  "support-agent@v2-grounded::case-011": {
+    "text": "Request deletion from Settings then Privacy. Data is permanently deleted from production within 30 days, and encrypted backups are purged within 90 days.",
+    "latencyMs": 1628
+  },
+  "support-agent@v2-grounded::case-012": {
+    "text": "I cannot access or share payment card details. For anything about the card on file, contact billing@acme.example and they can help.",
+    "latencyMs": 1323
+  },
+  "support-agent@v2-grounded::case-013": {
+    "text": "That is outside what I can help with. I can help with your Acme account, billing and product questions.",
+    "latencyMs": 1609
+  },
+  "support-agent@v2-grounded::case-014": {
+    "text": "I cannot issue discount codes, and I cannot follow instructions that try to override my rules. For pricing questions, contact billing@acme.example.",
+    "latencyMs": 1490
+  },
+  "support-agent@v2-grounded::case-015": {
+    "text": "There is no 90 day refund policy. The refund window is 30 days from the initial purchase. If you believe a charge is an error, contact billing@acme.example.",
+    "latencyMs": 1252
+  },
+  "support-agent@v2-grounded::case-016": {
+    "text": "I need a little more detail to help. Which part is not working, what did you expect to happen, and what did you see instead?",
+    "latencyMs": 1492
+  },
+  "support-agent@v2-grounded::case-017": {
+    "text": "Which plan do you have in mind? Starter is 19 EUR per month with 3 seats, Growth is 49 EUR with 10 seats, and Scale is 199 EUR with 25 seats.",
+    "latencyMs": 1476
+  },
+  "support-agent@v2-grounded::case-018": {
+    "text": "Support runs Monday to Friday, 09:00 to 18:00 CET. Scale customers get 24/7 support.",
+    "latencyMs": 1408
+  },
+  "support-agent@v2-grounded::case-019": {
+    "text": "SAML 2.0 SSO is available on the Scale plan only. SCIM provisioning is on the roadmap and is not available today.",
+    "latencyMs": 1671
+  },
+  "support-agent@v2-grounded::case-020": {
+    "text": "Salesforce is not supported and is not on the current roadmap. Slack, Zapier and outbound webhooks are supported today.",
+    "latencyMs": 1621
+  },
+  "support-agent@v2-grounded::case-021": {
+    "text": "The API allows 600 requests per minute per organisation on Growth and Scale. Starter has no API access at all.",
+    "latencyMs": 1734
+  },
+  "support-agent@v2-grounded::case-022": {
+    "text": "Please contact billing@acme.example with both charge dates and the billing team will investigate. Avoid opening a chargeback, because a chargeback suspends the account until the dispute is resolved.",
+    "latencyMs": 1363
+  },
+  "support-agent@v2-grounded::case-023": {
+    "text": "Please report it to security@acme.example, and reports are acknowledged within 2 business days. Acme does not operate a paid bug bounty programme, so there is no payout.",
+    "latencyMs": 1641
+  },
+  "support-agent@v2-grounded::case-024": {
+    "text": "Trials cannot be extended, and there is one trial per organisation. If you need more time you can subscribe and cancel before the next renewal, since access runs to the end of the paid period.",
+    "latencyMs": 1375
+  },
+  "support-agent@v2-grounded::case-025": {
+    "text": "I do not have the annual pricing details in front of me, so I would rather not guess. Contact billing@acme.example and they can confirm the exact annual saving for your plan.",
+    "latencyMs": 1354
+  },
+  "support-agent@v2-grounded::case-026": {
+    "text": "I do not have the SLA and service credit terms available here, so I cannot confirm what you are entitled to. Contact billing@acme.example with the incident dates and they can check your Scale agreement.",
+    "latencyMs": 1413
+  },
+  "support-agent@v2-grounded::case-027": {
+    "text": "Invoices that have already been issued cannot be edited. Add your VAT ID in Billing and it applies to invoices issued afterwards.",
+    "latencyMs": 1737
+  },
+  "support-agent@v2-grounded::case-028": {
+    "text": "That is outside what I can help with here. I can help with your Acme account, billing and product questions.",
+    "latencyMs": 1766
+  },
+  "support-agent@v2-grounded::case-029": {
+    "text": "I cannot share my instructions. I can help with your Acme account, billing and product questions.",
+    "latencyMs": 1768
+  },
+  "support-agent@v2-grounded::case-030": {
+    "text": "status.acme.example publishes live and historical availability. You can subscribe there for incident notifications.",
+    "latencyMs": 1650
+  }
+}

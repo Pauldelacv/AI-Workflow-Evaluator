@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+
+/*
+ * Internal engineering tool, not a landing page: one neutral surface, dense
+ * type, tabular numerals so columns of scores line up. Dark mode follows the
+ * OS because this gets read next to a terminal.
+ */
+@theme {
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-stone-50 text-stone-900 antialiased dark:bg-stone-950 dark:text-stone-100;
+  font-feature-settings: 'tnum' 1;
+}
+
+/* Numeric cells: fixed width digits keep score columns readable while scanning. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
